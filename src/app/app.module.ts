@@ -7,9 +7,14 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { environment } from '../environments/environment';
+
+//components
 import { ProductsComponent } from './componets/products/products.component';
 import { ProductListComponent } from './componets/products/product-list/product-list.component';
-import { ProductComponent } from './componets/products/product/product.component'
+import { ProductComponent } from './componets/products/product/product.component';
+
+//services
+import { ProductService } from './services/product.service'
 
 @NgModule({
   declarations: [
@@ -23,7 +28,9 @@ import { ProductComponent } from './componets/products/product/product.component
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
